@@ -21,7 +21,10 @@ using UnityEngine;
 
 public class SocketDebugger : MonoBehaviour
 {
-    private IClient _client = new Client("defaultkey", "127.0.0.1", 7350, false);
+    private IClient _client = new Client("defaultkey", "127.0.0.1", 7350, false)
+    {
+        Logger = new UnityLogger()
+    };
     private ISocket _socket;
 
     async void Awake()
